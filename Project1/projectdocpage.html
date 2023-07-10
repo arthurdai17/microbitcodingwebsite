@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <title>Micro:bit</title>
+  </head>
+  <body>
+    <header>
+      <nav class="nav-container">
+        <div class="logo-container">
+          <a href="index.html"
+            ><img src="images/microbit_logo.png" alt="Microbit_Logo"
+          /></a>
+        </div>
+        <ul>
+          <li><a class="nav-link" href="index.html">Introduction</a></li>
+          <li>
+            <a class="nav-link" href="projectdocpage.html"
+              >Project Documentation</a
+            >
+          </li>
+          <li><a class="nav-link" href="thankyoupage.html">Thank You</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="project-doc-container">
+      <h1 class="project-doc-main-title">Project Documentation</h1>
+      <div class="all-subpagetabs-container">
+        <button
+          class="smalltab1"
+          onclick="showFirstTabs(event, 'whatdoesitdo-content')"
+          type="button"
+        >
+          What does it do?
+        </button>
+
+        <button
+          class="smalltab1"
+          onclick="showFirstTabs(event, 'howtobuildit-content')"
+          type="button"
+        >
+          How to build it?
+        </button>
+
+        <button
+          class="smalltab1"
+          onclick="showFirstTabs(event, 'additionalfeatures-content')"
+          type="button"
+        >
+          Additional Features
+        </button>
+      </div>
+
+      <div class="all-subpagecontent-container">
+        <div id="whatdoesitdo-content" class="tinytap1 showfirstsubpagecontent">
+          <h1>Catch The Light (Game)</h1>
+
+          <p>
+            Before we delve into the workings of the "Catch The Light with
+            Buttons" game and the process of building this project, if you'd
+            like to familiarize yourself with the micro:bit board, you can start
+            by learning the basics from the following link
+            <a
+              href="https://microbit.org/get-started/first-steps/introduction/"
+              title="Micro:bit Tutorial"
+              >Microbit</a
+            >.
+          </p>
+
+          <div class="image-container1">
+            <img src="images/microbit-board.png" alt="Microbit_Board" />
+            <img
+              src="images/microbit-crossline.png"
+              alt="Microbit_Board_crossline"
+            />
+            <img
+              src="images/microbit-crossline-notes.png"
+              alt="Microbit_crossline_notes"
+            />
+          </div>
+
+          <p>
+            In this game, players are presented with a 5x5 grid consisting of 25
+            LED lights representing different coordinates on the micro:bit
+            board. The game begins with a countdown from 3 to 1, and players use
+            Button A, Button B, and Button AB (press and hold both buttons A and
+            B at the same time) as controllers. Button A controls the first two
+            columns of the grid, excluding coordinates [2, 0] and [2, 1], while
+            Button AB controls the middle column and the middle row. Button B,
+            on the other hand, controls the last two columns, excluding
+            coordinates [2, 3] and [2, 4]. Each round, only one LED light
+            appears on the grid at a time. Players earn one point and advance to
+            the next round by correctly pressing the corresponding button for
+            the lit LED. However, pressing the wrong button results in immediate
+            game over, with no points earned. After the game concludes, the
+            final score and time spent playing are displayed.
+          </p>
+
+          <h1 class="coordinates-heading">What are Coordinates?</h1>
+
+          <div class="image-container2">
+            <img src="images/LEDs_coordinates.png" alt="LEDs_coordinates" />
+            <img src="images/coordinates_points.png" alt="coordinates_points" />
+          </div>
+
+          <p>
+            In the context of the micro:bit board, coordinates refer to the
+            specific positions or locations on the LED grid of the micro:bit.
+            The micro:bit features a 5x5 grid of LEDs, resulting in a total of
+            25 individual LED lights. Each LED represents a coordinate within
+            the grid. The coordinates on the micro:bit LED grid are represented
+            by two numbers: an x-coordinate (horizontal) and a y-coordinate
+            (vertical). The x-coordinate ranges from 0 to 4, representing the
+            columns from left to right. The y-coordinate also ranges from 0 to
+            4, representing the rows from top to bottom. For example, the
+            coordinate (0, 0) represents the top-left corner of the LED grid,
+            and (4, 4) represents the bottom-right corner. By specifying the
+            appropriate x and y coordinates, you can control and manipulate
+            individual LEDs or groups of LEDs on the micro:bit board.
+          </p>
+        </div>
+
+        <div id="howtobuildit-content" class="tinytap1">
+          <h1>Game Break Down</h1>
+          <ul>
+            <li>
+              The game features a 5x5 grid with 25 LED lights representing
+              coordinates.
+            </li>
+            <li>The game starts with a countdown from 3 to 1.</li>
+            <li>Button A, Button B, and Button AB are used as controllers.</li>
+            <li>
+              Button A controls the first two columns (excluding [2, 0] and [2,
+              1]).
+            </li>
+            <li>Button AB controls the middle column and the middle row.</li>
+            <li>
+              Button B controls the last two columns (excluding [2, 3] and [2,
+              4]).
+            </li>
+            <li>
+              Only ONE LED light appears on the board at a time during each
+              round.
+            </li>
+            <li>
+              Correctly pressing the corresponding button earns one point and
+              progresses to the next round.
+            </li>
+            <li>
+              Pressing the wrong button results in no points and immediate game
+              over.
+            </li>
+            <li>
+              After the game ends, the final score and time spent are displayed.
+            </li>
+          </ul>
+          <h1 class="stepbystep-heading">Step by Step</h1>
+        </div>
+
+        <div id="additionalfeatures-content" class="tinytap1">
+          <h1>Additional Features Suggestion</h1>
+          <p>- Add Timer for each round (only 3 seconds)</p>
+          <p>- Add Diagonal Lines as Button AB column</p>
+          <p>
+            - Make the LEDs light only appears for 1 second and then flash out,
+            players need to guess where it is
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <script src="js/index.js"></script>
+  </body>
+</html>
